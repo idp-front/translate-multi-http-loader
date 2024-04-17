@@ -1,7 +1,37 @@
-# multi-http-loader
+Provides opportunity for loading several files at the same time
 
-This library was generated with [Nx](https://nx.dev).
+## Install
 
-## Running unit tests
+```javascript
+npm i @idp-front/translate-multi-http-loader
+```
 
-Run `nx test multi-http-loader` to execute the unit tests.
+## Example
+
+```javascript
+import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { MultiTranslateHttpLoader } from '@idp-front/translate-multi-http-loader';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'ru_RU',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: () =>
+          new MultiTranslateHttpLoader([
+            { prefix: `/assets/i18n/`, suffix: '.json' },
+            {
+              prefix: `/assets/shared/i18n/`,
+              suffix: '.json',
+            },
+          ]),
+      },
+    }),
+  ],
+})
+export class AppModule {}
+```
