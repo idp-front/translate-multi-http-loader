@@ -6,7 +6,7 @@
     "test": "nx test multi-http-loader",
     "build": "nx build multi-http-loader"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/common": "~17.3.0",
     "@angular/core": "~17.3.0",
