@@ -1,5 +1,5 @@
 {
-  "name": "@idp-front/translatemulti-http-loader",
+  "name": "@idp-front/translate-multi-http-loader",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
