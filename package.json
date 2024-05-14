@@ -4,8 +4,7 @@
   "license": "MIT",
   "scripts": {
     "test": "nx test multi-http-loader",
-    "build": "nx build multi-http-loader",
-    "publish": "npm publish"
+    "build": "nx build multi-http-loader"
   },
   "private": true,
   "dependencies": {
