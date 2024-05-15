@@ -11,13 +11,15 @@ import {
 import { merge } from 'lodash-es';
 
 export class MultiTranslateHttpLoader implements TranslateLoader {
-  constructor(private resources: { prefix: string; suffix: string }[] = []) {}
+  private readonly suffix = '.json';
+
+  constructor(private pathToFolders: string[] = []) {}
 
   public getTranslation(lang: string): Observable<unknown> {
-    return this.resources.length
+    return this.pathToFolders.length
       ? forkJoin(
-          this.resources.map((config) =>
-            from(fetch(`${config.prefix}${lang}${config.suffix}`)).pipe(
+          this.pathToFolders.map((pathToFolder: string) =>
+            from(fetch(`${pathToFolder}${lang}${this.suffix}`)).pipe(
               switchMap((response: Response) => from(response.json())),
               catchError(() => of({}))
             )

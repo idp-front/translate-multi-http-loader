@@ -24,10 +24,7 @@ describe('MultiTranslateHttpLoader', () => {
   });
 
   it('merge translations', (done) => {
-    new MultiTranslateHttpLoader([
-      { prefix: '/', suffix: '.json' },
-      { prefix: '/module/', suffix: '.json' },
-    ])
+    new MultiTranslateHttpLoader(['/', '/module/'])
       .getTranslation('en')
       .subscribe((translations) => {
         expect(translations).toEqual({
@@ -52,10 +49,7 @@ describe('MultiTranslateHttpLoader', () => {
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       })) as unknown as any;
 
-    new MultiTranslateHttpLoader([
-      { prefix: '/', suffix: '.json' },
-      { prefix: '/module/', suffix: '.json' },
-    ])
+    new MultiTranslateHttpLoader(['/', '/module/'])
       .getTranslation('en')
       .subscribe((translations) => {
         expect(translations).toEqual({
