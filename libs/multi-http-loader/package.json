@@ -1,6 +1,10 @@
 {
   "name": "@idp-front/translate-multi-http-loader",
-  "version": "1.0.2",
+  "version": "1.0.3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idp-front/translate-multi-http-loader"
+  },
   "peerDependencies": {
     "@angular/common": "^17.3.0",
     "@angular/core": "^17.3.0",
