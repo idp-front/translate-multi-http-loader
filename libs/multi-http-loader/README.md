@@ -22,13 +22,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
       loader: {
         provide: TranslateLoader,
         useFactory: () =>
-          new MultiTranslateHttpLoader([
-            { prefix: `/assets/i18n/`, suffix: '.json' },
-            {
-              prefix: `/assets/shared/i18n/`,
-              suffix: '.json',
-            },
-          ]),
+          new MultiTranslateHttpLoader(['/assets/i18n/', '/assets/shared/i18n/']),
       },
     }),
   ],
